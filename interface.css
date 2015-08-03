@@ -1,0 +1,13 @@
+.test_button {
+	width: 100px;
+	height: 17px;
+	border: 1px;
+	border-style: solid;
+	border-color: 899ca4;
+	margin: auto;
+	padding: 2px;
+	cursor:pointer;
+	background-color: #ACC4CE;
+	text-align: center;
+	color: 444e52;
+}
