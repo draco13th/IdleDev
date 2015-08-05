@@ -39,11 +39,13 @@ function deleteSave(){
 };
 //Game update - 1 second interval
 window.setInterval(function(){
-	createCode(interns);											//Allow the interns to code
-	document.getElementById('interns').innerHTML = interns;			//Update interns
-    document.getElementById('code').innerHTML = code;				//Update code
-	var internCost = Math.floor(10 * Math.pow(1.1,interns));		//Keep track of the intern cost
-	document.getElementById('internCost').innerHTML = internCost;	//Update intern cost
+    createCode(interns);											
+    document.getElementById('interns').innerHTML = interns;		
+    document.getElementById('code').innerHTML = code;			
+    var internCost = Math.floor(10 * Math.pow(1.1,interns));	
+    document.getElementById('internCost').innerHTML = internCost;
+    var codeps = interns;										
+    document.getElementById('codeps').innerHTML = codeps;
 }, 1000);
 //Game update - 60 second interval
 window.setInterval(function(){
