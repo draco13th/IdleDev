@@ -40,7 +40,7 @@ window.setInterval(function(){
     createCode(interns);											
     document.getElementById('interns').innerHTML = interns;		
     document.getElementById('code').innerHTML = code;			
-    var internCost = Math.floor(10 * Math.pow(1.1,interns));	
+    var internCost = Math.floor(10 * Math.pow(1.2,interns));	
     document.getElementById('internCost').innerHTML = internCost;
     var codeps = interns;										
     document.getElementById('codeps').innerHTML = codeps;
