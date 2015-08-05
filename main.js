@@ -9,14 +9,14 @@ function createCode(number){
 };
 //Hire Intern Function
 function hireIntern(){
-    var internCost = Math.floor(10 * Math.pow(1.1,interns));    	
+    var internCost = Math.floor(10 * Math.pow(1.2,interns));    	
     if(code >= internCost){                                   		
         interns = interns + 1;                                  	
     	code = code - internCost;                          			
 		document.getElementById('interns').innerHTML = interns;  	
         document.getElementById('code').innerHTML = code;  			
     };
-    var nextCost = Math.floor(10 * Math.pow(1.1,interns));       	
+    var nextCost = Math.floor(10 * Math.pow(1.2,interns));       	
     document.getElementById('internCost').innerHTML = nextCost;  	
 };
 //Save Game function
