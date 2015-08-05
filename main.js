@@ -18,8 +18,6 @@ function hireIntern(){
     };
     var nextCost = Math.floor(10 * Math.pow(1.2,interns));       	
     document.getElementById('internCost').innerHTML = nextCost;
-    var codeps = interns;											//Keep track of LoC per Second
-    document.getElementById('codeps').innerHTML = codeps;
 };
 //Save Game function
 function saveGame(){
