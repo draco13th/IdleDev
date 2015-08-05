@@ -1,28 +1,25 @@
-//Keep track of the Code Variable
+//Code Variable
 var code = 0;
-//Keep track of the Interns Variable
+//Interns Variable
 var interns = 0;
-
-//Gain one line of code when button is clicked
+//Generate Code Function
 function createCode(number){
 	code = code + number;
 	document.getElementById("code").innerHTML = code;
 };
-
 //Hire Intern Function
 function hireIntern(){
-    var internCost = Math.floor(10 * Math.pow(1.1,interns));    	//works out the cost of this intern
-    if(code >= internCost){                                   		//checks that the player can afford the intern
-        interns = interns + 1;                                  	//increases number of interns
-    	code = code - internCost;                          			//removes the code spent
-		document.getElementById('interns').innerHTML = interns;  	//updates the number of interns for the user
-        document.getElementById('code').innerHTML = code;  			//updates the number of code for the user
+    var internCost = Math.floor(10 * Math.pow(1.1,interns));    	
+    if(code >= internCost){                                   		
+        interns = interns + 1;                                  	
+    	code = code - internCost;                          			
+		document.getElementById('interns').innerHTML = interns;  	
+        document.getElementById('code').innerHTML = code;  			
     };
-    var nextCost = Math.floor(10 * Math.pow(1.1,interns));       	//works out the cost of the next intern
-    document.getElementById('internCost').innerHTML = nextCost;  	//updates the intern cost for the user
+    var nextCost = Math.floor(10 * Math.pow(1.1,interns));       	
+    document.getElementById('internCost').innerHTML = nextCost;  	
 };
-
-//Save game function
+//Save Game function
 function saveGame(){
 	var save = {
 		code: code,
@@ -30,18 +27,16 @@ function saveGame(){
 	}
 	localStorage.setItem("save",JSON.stringify(save));
 };
-//Delete save function
+//Hard Reset Function
 function deleteSave(){
-	localStorage.removeItem("save");
+	var areusure = confirm("This will delete all of your current progress, would you like to continue?")
+	if (areusure == true) {
+		localStorage.removeItem("save");
+		location.reload();
+	}
 };
-//Test function for div elements
-function test(){
-	alert("This div button thing works :D");
-}
-
-//Game loop that will call anything within it once a second
+//Game update - 1 second interval
 window.setInterval(function(){
-	
 	createCode(interns);											//Allow the interns to code
 	document.getElementById('interns').innerHTML = interns;			//Update interns
     document.getElementById('code').innerHTML = code;				//Update code
@@ -49,5 +44,8 @@ window.setInterval(function(){
 	document.getElementById('internCost').innerHTML = internCost;	//Update intern cost
 	var codeps = interns;											//Keep track of LoC per Second
 	document.getElementById('codeps').innerHTML = codeps;			//Update LoC per Second
-
 }, 1000);
+//Game update - 60 second interval
+window.setInterval(function(){
+	saveGame()
+}, 60000);

@@ -1,13 +1,85 @@
-.test_button {
-	width: 100px;
-	height: 17px;
-	border: 1px;
-	border-style: solid;
-	border-color: 899ca4;
-	margin: auto;
-	padding: 2px;
+/*Disable double clicking*/
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/*Styling for the Options Buttons*/
+.options_button {
+	width:200px;
+	height:17px;
+	border:1px;
+	border-style:solid;
+	border-color:899ca4;
+	padding:3px;
 	cursor:pointer;
-	background-color: #ACC4CE;
-	text-align: center;
-	color: 444e52;
+	background-color:#ACC4CE;
+	text-align:center;
+	color:444e52;
+}
+/*Container for the Options Buttons*/
+#options_section{
+	text-align:center;
+}
+#option1, #option2{
+	display:inline;
+}
+/*Styling for the CPS*/
+.codepersecond {
+	text-align:center;
+	width:200px;
+	height:17px;
+	border:1px;
+	border-style:solid;
+	margin:auto;
+}
+#codepersecond p, #codepersecond span{
+	display:inline;
+}
+/*Styling for the LOC*/
+.linespersecond {
+	text-align:center;
+	width:200px;
+	height:17px;
+	border:1px;
+	border-style:solid;
+	margin:auto;
+	margin-top:2px;
+}
+#linespersecond p, #linespersecond span {
+	display:inline;
+}
+/*Styling for Gameplay Section*/
+.gameplay_section {
+	width:200px;
+	height:17px;
+	border:1px;
+	border-style:solid;
+	border-color:899ca4;
+	padding:3px;
+	cursor:pointer;
+	background-color:#ACC4CE;
+	text-align:center;
+	color:444e52;
+}
+#gameplay_section {
+	text-align:center;
+}
+#gencode, #hireintern {
+	display:inline;
+}
+/*Styling for Gameplay Info*/
+.gameplay_info {
+	width:150px;
+	height:17px;
+	border:1px;
+	border-style:solid;
+	margin:auto;
+	text-align:center;
+}
+#gameplay_info p, #gameplay_info span, #gameplay_info p, #gameplay_info span {
+	display:inline;
 }

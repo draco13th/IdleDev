@@ -1,13 +1,14 @@
 <html>
 
 	<head>
-	
 	<!--Link to the CSS file-->
 	<link rel="stylesheet" type="text/css" href="interface.css" />
-	
-	<title>IdleDev v0.0.3</title>
-	
-	<!--Load the game when the page refreshes-->
+	<!--Title that will appear in the tab section-->
+	<title>IdleDev v0.0.4</title>
+	<!--Title & info that will appear on the page itself-->
+	<h2>IdleDev v0.0.4</h2>
+	<p><i>The game will autosave every minute.</i></p>
+	<!--Script to load the game upon page refresh-->
 	<script>
 	function load() {
 		var savegame = JSON.parse(localStorage.getItem("save"));
@@ -16,34 +17,55 @@
 	}
 	window.onload = load;
 	</script>
-	
 	</head>
 	
 	<body>
-	
-	<h2>IdleDev v0.0.3</h2>
+	<!--Link to the changelog-->
 	<p><a href="http://draco13th.github.io/IdleDev/Changelog/">Changelog</a></p>
 	
-	<!--Buttons to save and delete current game-->
-	<button type="button" onclick="saveGame()">Save Game</button>
-	<button type="button" onclick="deleteSave()">Delete Save</button>
-	<br><br>
-	
-	<p><button type="button" onclick="createCode(1)">_Generate Code_</button> Lines of Code: <span id="code">0</span></p>
-	
-	<!--Button to compile a program-->
-	<button type="button" onclick="compile()">Compile Program</button>	
-	
-	<!--Button to hire intern-->
-	<p><button type="button" onclick="hireIntern()">_Hire_An_Intern_</button> Interns: <span id="interns">0</span> | Cost: <span id="internCost">10</span></p>	
-	
+	<!--Information Section-->
 	<!--Code per Second-->
-	<p>CPS: <span id="codeps">0</span></p>	
-
-	<div class="test_button" onclick="test()">Click Me</div>
-
-	<script type="text/javascript" src="main.js"></script>
+	<div id="codepersecond" class="codepersecond">
+		<p>CPS: </p>
+		<span id="codeps">0</span>
+	</div>
+	<!--Lines of Code-->
+	<div id="linespersecond" class="linespersecond">
+		<p>Lines of Code: </p>
+		<span id="code">0</span>
+	</div>
+	<br>
 	
+	<!--Gameplay section-->
+	<div id="gameplay_section">
+		<!--Generate Code-->
+		<div id="gencode" class="gameplay_section noselect" onclick="createCode(1)">Generate Code</div>
+		<!--Hire Intern-->
+		<div id="hireintern" class="gameplay_section noselect" onclick="hireIntern()">Hire a <del>slave</del> Intern</div>
+	</div>
+	<br>
+	<div id="gameplay_info" class="gameplay_info">
+		<!--Track interns and cost-->
+		<p>Interns: </p>
+		<span id="interns">0</span>
+		<p>| Cost: <p>
+		<span id="internCost">10</span>
+	</div>
+	<br>
+	
+	<!--Options Section-->
+	<div id="options_section">
+		<div id="option1" class="options_button" onclick="saveGame()">Save Game</div>
+		<div id="option2" class="options_button" onclick="deleteSave()">Hard Reset</div>
+	</div>
+	<br>
+	
+	<!--Test Section-->
+	<p>Anything below this line is in testing, no guarantees to work, or effect gameplay.</p>
+	<hr>
+	
+	<!--Link to JavaScript file-->
+	<script type="text/javascript" src="main.js"></script>
 	</body>
 	
 </html>
