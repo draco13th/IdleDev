@@ -17,7 +17,9 @@ function hireIntern(){
         document.getElementById('code').innerHTML = code;  			
     };
     var nextCost = Math.floor(10 * Math.pow(1.2,interns));       	
-    document.getElementById('internCost').innerHTML = nextCost;  	
+    document.getElementById('internCost').innerHTML = nextCost;
+    var codeps = interns;											//Keep track of LoC per Second
+    document.getElementById('codeps').innerHTML = codeps;
 };
 //Save Game function
 function saveGame(){
@@ -42,8 +44,6 @@ window.setInterval(function(){
     document.getElementById('code').innerHTML = code;				//Update code
 	var internCost = Math.floor(10 * Math.pow(1.1,interns));		//Keep track of the intern cost
 	document.getElementById('internCost').innerHTML = internCost;	//Update intern cost
-	var codeps = interns;											//Keep track of LoC per Second
-	document.getElementById('codeps').innerHTML = codeps;			//Update LoC per Second
 }, 1000);
 //Game update - 60 second interval
 window.setInterval(function(){
