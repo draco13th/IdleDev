@@ -49,7 +49,6 @@ function deleteSave(){
 };
 //Game update - 1 second interval
 window.setInterval(function(){
-<<<<<<< HEAD
 	createCode(interns);											//Allow the interns to code
 	document.getElementById('interns').innerHTML = interns;			//Update interns
     document.getElementById('code').innerHTML = code;				//Update code
@@ -58,15 +57,6 @@ window.setInterval(function(){
 	document.getElementById('internCost').innerHTML = internCost;	//Update intern cost
 	var codeps = interns;											//Keep track of LoC per Second
 	document.getElementById('codeps').innerHTML = codeps;			//Update LoC per Second
-=======
-    createCode(interns);											
-    document.getElementById('interns').innerHTML = interns;		
-    document.getElementById('code').innerHTML = code;			
-    var internCost = Math.floor(10 * Math.pow(1.2,interns));	
-    document.getElementById('internCost').innerHTML = internCost;
-    var codeps = interns;										
-    document.getElementById('codeps').innerHTML = codeps;
->>>>>>> origin/gh-pages
 }, 1000);
 //Game update - 60 second interval
 window.setInterval(function(){

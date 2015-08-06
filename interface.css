@@ -90,6 +90,9 @@
 	border:1px;
 	border-style:solid;
 	text-align:center;
-	padding:1px;
+	padding:3px;
 	cursor:pointer;
+}
+#compprogram, #compiler p, #compiler span {
+	display:inline;
 }
