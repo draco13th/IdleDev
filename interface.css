@@ -83,3 +83,13 @@
 #gameplay_info p, #gameplay_info span, #gameplay_info p, #gameplay_info span {
 	display:inline;
 }
+/*Styling for Compiling a Program*/
+.test {
+	width:200px;
+	height:17px;
+	border:1px;
+	border-style:solid;
+	text-align:center;
+	padding:1px;
+	cursor:pointer;
+}

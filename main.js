@@ -2,6 +2,8 @@
 var code = 0;
 //Interns Variable
 var interns = 0;
+//Programs Variable
+var programs = 0;
 //Generate Code Function
 function createCode(number){
 	code = code + number;
@@ -19,11 +21,21 @@ function hireIntern(){
     var nextCost = Math.floor(10 * Math.pow(1.2,interns));       	
     document.getElementById('internCost').innerHTML = nextCost;  	
 };
+//Compile Program Function
+function compileProgram(){
+	if(code >= 50) {
+		code = code - 50;
+		programs = programs + 1
+		document.getElementById('code').innerHTML = code;
+		document.getElementById('programs').innerHTML = programs;
+	};
+};
 //Save Game function
 function saveGame(){
 	var save = {
 		code: code,
 		interns: interns,
+		programs: programs,
 	}
 	localStorage.setItem("save",JSON.stringify(save));
 };
@@ -40,7 +52,8 @@ window.setInterval(function(){
 	createCode(interns);											//Allow the interns to code
 	document.getElementById('interns').innerHTML = interns;			//Update interns
     document.getElementById('code').innerHTML = code;				//Update code
-	var internCost = Math.floor(10 * Math.pow(1.1,interns));		//Keep track of the intern cost
+	document.getElementById('programs').innerHTML = programs;		//Update programs
+	var internCost = Math.floor(10 * Math.pow(1.2,interns));		//Keep track of the intern cost
 	document.getElementById('internCost').innerHTML = internCost;	//Update intern cost
 	var codeps = interns;											//Keep track of LoC per Second
 	document.getElementById('codeps').innerHTML = codeps;			//Update LoC per Second

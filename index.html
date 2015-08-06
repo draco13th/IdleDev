@@ -4,25 +4,22 @@
 	<!--Link to the CSS file-->
 	<link rel="stylesheet" type="text/css" href="interface.css" />
 	<!--Title that will appear in the tab section-->
-	<title>IdleDev v0.0.4</title>
-	<!--Title & info that will appear on the page itself-->
-	<h2>IdleDev v0.0.4</h2>
-	<p><i>The game will autosave every minute.</i></p>
+	<title>IdleDev v0.0.5</title>
+	<!--Info / Changelog Link-->
+	<p><i>The game will autosave every minute.</i> <a href="http://draco13th.github.io/IdleDev/Changelog/">Changelog</a></p>
 	<!--Script to load the game upon page refresh-->
 	<script>
 	function load() {
 		var savegame = JSON.parse(localStorage.getItem("save"));
 		if (typeof savegame.code !== "undefined") code = savegame.code;
 		if (typeof savegame.interns !== "undefined") interns = savegame.interns;
+		if (typeof savegame.programs !== "undefined") programs = savegame.programs;
 	}
 	window.onload = load;
 	</script>
 	</head>
 	
 	<body>
-	<!--Link to the changelog-->
-	<p><a href="http://draco13th.github.io/IdleDev/Changelog/">Changelog</a></p>
-	
 	<!--Information Section-->
 	<!--Code per Second-->
 	<div id="codepersecond" class="codepersecond">
@@ -63,6 +60,13 @@
 	<!--Test Section-->
 	<p>Anything below this line is in testing, no guarantees to work, or effect gameplay.</p>
 	<hr>
+	
+	<!--Compile a Program-->
+	<div id="compiler">
+		<div id="compprogram" class="test noselect" onclick="compileProgram()">Compile Program</div>
+		<p>Programs: </p>
+		<span id="programs">0</span>
+	</div>
 	
 	<!--Link to JavaScript file-->
 	<script type="text/javascript" src="main.js"></script>
