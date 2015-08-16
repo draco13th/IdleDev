@@ -14,6 +14,7 @@
 		if (typeof savegame.code !== "undefined") code = savegame.code;
 		if (typeof savegame.interns !== "undefined") interns = savegame.interns;
 		if (typeof savegame.programs !== "undefined") programs = savegame.programs;
+		if (typeof savegame.money !== "undefined") money = savegame.money;
 	}
 	window.onload = load;
 	</script>
@@ -67,6 +68,14 @@
 		<p>Programs: </p>
 		<span id="programs">0</span>
 	</div>
+	<br>
+	
+	<!--Track money-->
+	<div id="sell_program">
+		<div id="sellprogram" class="test noselect" onclick="sellprogram()">Sell Program</div>
+		<p>Money: $</p>
+		<span id="money_">0</span>
+	</div>	
 	
 	<!--Link to JavaScript file-->
 	<script type="text/javascript" src="main.js"></script>
