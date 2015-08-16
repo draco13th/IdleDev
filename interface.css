@@ -96,3 +96,7 @@
 #compprogram, #compiler p, #compiler span {
 	display:inline;
 }
+/*Styling for Selling a Program*/
+#sellprogram, #sell_program p, #sell_program span {
+	display:inline;
+}
